@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react';
 import {useSelector, useDispatch} from "react-redux";
 import {ApartmentCard} from "../components/ApartmentCard";
 import {fetchApartments, likeApartment} from "../redux/actions/apartment.actions";
+import {displaySize} from "../helpers/displaySize";
+import {DISPLAY_L, DISPLAY_M, DISPLAY_S, DISPLAY_XL, DISPLAY_XS} from "../constants/displaySize.constants";
 
 const styles = {
   container: {
@@ -27,11 +29,11 @@ export const Apartments = () => {
   }, [])
 
   useEffect(() => {
-    displayWidth >= 1200 && setColumnNumber(5)
-    displayWidth >= 992 && displayWidth < 1200 && setColumnNumber(4)
-    displayWidth >= 768 && displayWidth < 992 && setColumnNumber(3)
-    displayWidth >= 576 && displayWidth < 768 && setColumnNumber(2)
-    displayWidth < 576 && setColumnNumber(1)
+    displaySize(displayWidth) === DISPLAY_XL && setColumnNumber(5)
+    displaySize(displayWidth) === DISPLAY_L && setColumnNumber(4)
+    displaySize(displayWidth) === DISPLAY_M && setColumnNumber(3)
+    displaySize(displayWidth) === DISPLAY_S && setColumnNumber(2)
+    displaySize(displayWidth) === DISPLAY_XS && setColumnNumber(1)
   }, [displayWidth])
 
   const likeApartmentHandler = (id) => {

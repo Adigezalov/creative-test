@@ -1,0 +1,5 @@
+export const DISPLAY_XL = 'XL'
+export const DISPLAY_L = 'L'
+export const DISPLAY_M = 'M'
+export const DISPLAY_S = 'S'
+export const DISPLAY_XS = 'XS'
