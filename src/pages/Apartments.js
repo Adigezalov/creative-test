@@ -20,13 +20,15 @@ export const Apartments = () => {
   const apartments = useSelector((state) => state.apartment.apartments);
 
   useEffect(() => {
-    setDisplayWidth(window.innerWidth)
-    window.addEventListener("resize", () => {
-      setDisplayWidth(window.innerWidth)
-    });
+    resizeDisplayHandler()
+    window.addEventListener("resize", () => resizeDisplayHandler());
     dispatch(fetchApartments())
-    return window.removeEventListener("resize", null)
+    return window.removeEventListener("resize", () => resizeDisplayHandler())
   }, [])
+
+  const resizeDisplayHandler = () => {
+    setDisplayWidth(window.innerWidth)
+  }
 
   useEffect(() => {
     displaySize(displayWidth) === DISPLAY_XL && setColumnNumber(5)
