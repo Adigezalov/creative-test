@@ -1,5 +1,5 @@
 import React from 'react';
-import {Like} from "./Like";
+import {LikeComponent} from "./Like.component";
 
 const styles = {
   card: {
@@ -18,14 +18,14 @@ const styles = {
   }
 }
 
-export const ApartmentCard = ({apartment, likeApartmentHandler}) => {
+export const ApartmentCardComponent = ({apartment, likeApartmentHandler}) => {
   const {id, title, like} = apartment
   return (
       <div style={styles.card}>
         {title}
         <div style={styles.like} onClick={() => {
           likeApartmentHandler(id)}}>
-          <Like active={like}/>
+          <LikeComponent active={like}/>
         </div>
       </div>
   );

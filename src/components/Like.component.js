@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Like = ({active}) => {
+export const LikeComponent = ({active}) => {
   return (
       <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width={20} height={20} viewBox='0 0 512 521' fill={active ? 'red' : '#eee'}>
         <path d="M376,30c-27.783,0-53.255,8.804-75.707,26.168c-21.525,16.647-35.856,37.85-44.293,53.268

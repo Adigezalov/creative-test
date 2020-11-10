@@ -10,7 +10,7 @@ const styles = {
   borderTopStyle: 'solid'
 }
 
-export const Footer = () => {
+export const FooterComponent = () => {
 return (
       <footer style={styles}>
         здесь footer

@@ -10,7 +10,7 @@ const styles = {
   borderBottomStyle: 'solid'
 }
 
-export const Header = () => {
+export const HeaderComponent = () => {
   return (
       <header style={styles}>
         здесь header

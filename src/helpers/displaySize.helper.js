@@ -1,6 +1,6 @@
 import {DISPLAY_L, DISPLAY_M, DISPLAY_S, DISPLAY_XL, DISPLAY_XS} from "../constants/displaySize.constants";
 
-export const displaySize = (width) => {
+export const displaySizeHelper = (width) => {
   if (width >= 1200) {
     return DISPLAY_XL
   }

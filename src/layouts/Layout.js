@@ -1,6 +1,6 @@
 import React from "react";
-import {Header} from "../components/Header";
-import {Footer} from "../components/Footer";
+import {HeaderComponent} from "../components/Header.component";
+import {FooterComponent} from "../components/Footer.component";
 import {Apartments} from "../pages/Apartments";
 
 const styles = {
@@ -21,12 +21,12 @@ const styles = {
 
 export const Layout = () => (
     <div style={styles.wrapper}>
-      <Header/>
+      <HeaderComponent/>
       <div style={styles.content}>
         <main style={{...styles.main}}>
           <Apartments/>
         </main>
       </div>
-      <Footer/>
+      <FooterComponent/>
     </div>
 )

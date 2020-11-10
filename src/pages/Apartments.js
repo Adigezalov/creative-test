@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import {useSelector, useDispatch} from "react-redux";
-import {ApartmentCard} from "../components/ApartmentCard";
+import {ApartmentCardComponent} from "../components/ApartmentCard.component";
 import {fetchApartments, likeApartment} from "../redux/actions/apartment.actions";
-import {displaySize} from "../helpers/displaySize";
+import {displaySizeHelper} from "../helpers/displaySize.helper";
 import {DISPLAY_L, DISPLAY_M, DISPLAY_S, DISPLAY_XL, DISPLAY_XS} from "../constants/displaySize.constants";
 
 const styles = {
@@ -31,11 +31,11 @@ export const Apartments = () => {
   }
 
   useEffect(() => {
-    displaySize(displayWidth) === DISPLAY_XL && setColumnNumber(5)
-    displaySize(displayWidth) === DISPLAY_L && setColumnNumber(4)
-    displaySize(displayWidth) === DISPLAY_M && setColumnNumber(3)
-    displaySize(displayWidth) === DISPLAY_S && setColumnNumber(2)
-    displaySize(displayWidth) === DISPLAY_XS && setColumnNumber(1)
+    displaySizeHelper(displayWidth) === DISPLAY_XL && setColumnNumber(5)
+    displaySizeHelper(displayWidth) === DISPLAY_L && setColumnNumber(4)
+    displaySizeHelper(displayWidth) === DISPLAY_M && setColumnNumber(3)
+    displaySizeHelper(displayWidth) === DISPLAY_S && setColumnNumber(2)
+    displaySizeHelper(displayWidth) === DISPLAY_XS && setColumnNumber(1)
   }, [displayWidth])
 
   const likeApartmentHandler = (id) => {
@@ -46,7 +46,7 @@ export const Apartments = () => {
       <div style={{...styles.container, gridTemplateColumns: `repeat(${columnNumber}, 1fr)`}}>
         {
           apartments.map(apartment => (
-              <ApartmentCard key={apartment.id} apartment={apartment} likeApartmentHandler={likeApartmentHandler}/>
+              <ApartmentCardComponent key={apartment.id} apartment={apartment} likeApartmentHandler={likeApartmentHandler}/>
           ))
         }
       </div>
